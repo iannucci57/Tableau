@@ -1,0 +1,27 @@
+MTD
+if [TradeDate] >= DATE(datetrunc('month',[MaxDate])) and [TradeDate] <= [MaxDate] then [PFOF] else 0 END
+
+PMTD 
+if [TradeDate] >= DATE(datetrunc('month',DATEADD('month',-1,[MaxDate]))) and [TradeDate] <= DATEADD('month',-1,[MaxDate]) then [PFOF] else 0 END
+
+PQTD 
+if [TradeDate] >= DATE(datetrunc('quarter',DATEADD('quarter',-1,[MaxDate]))) and [TradeDate] <= DATEADD('quarter',-1,[MaxDate]) then [PFOF] else 0 END
+
+PWTD
+if [TradeDate] >= DATE(datetrunc('week',DATEADD('week',-1,[MaxDate]))) and [TradeDate] <= DATEADD('week',-1,[MaxDate]) then [PFOF] else 0 END
+
+PYQTD
+if [TradeDate] >= DATE(datetrunc('quarter',dateadd('year',-1,[MaxDate]))) and [TradeDate] <= dateadd('year',-1,[MaxDate]) then [PFOF] else 0 END
+
+PYTD 
+if [TradeDate] >= DATE(datetrunc('year',DATEADD('year',-1,[MaxDate]))) and [TradeDate] <= DATEADD('year',-1,[MaxDate]) then [PFOF] else 0 END
+
+QTD
+if [TradeDate] >= DATE(datetrunc('quarter',[MaxDate])) and [TradeDate] <= [MaxDate] then [PFOF] else 0 END
+
+WTD
+if [TradeDate] >= DATE(datetrunc('week',[MaxDate])) and [TradeDate] <= [MaxDate] then [PFOF] else 0 END
+
+YTD
+if [TradeDate] >= DATE(datetrunc('year',[MaxDate])) and [TradeDate] <= [MaxDate] then [PFOF] else 0 END
+
